@@ -1,0 +1,178 @@
+% md2pdf-fingerprint: 425d169ef40b6a85
+% md2pdf-input-sha: 1ea2ae3003328b46
+% QUOTE-FIX: lua-filter-v3
+% HOUSE-STYLE: v1
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+]{ctexart}
+\usepackage{xcolor}
+\usepackage[paperwidth=21.0cm,paperheight=29.7cm,left=1.8cm,right=1.8cm,top=2.0cm,bottom=2.0cm,headheight=15pt,headsep=11pt,footskip=1.2cm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{newunicodechar}
+\IfFontExistsTF{Times New Roman}{\setmainfont{Times New Roman}}{}
+\IfFontExistsTF{Arial}{\setsansfont{Arial}}{}
+\IfFontExistsTF{Consolas}{\setmonofont{Consolas}}{}
+\xeCJKDeclareCharClass{CJK}{"2130 -> "214F, "2190 -> "21FF, "2460 -> "24FF, "27C0 -> "27EF}
+\newunicodechar{⇒}{\ensuremath{\Rightarrow}}
+\newunicodechar{↔}{\ensuremath{\leftrightarrow}}
+\newunicodechar{⟺}{\ensuremath{\Longleftrightarrow}}
+\newunicodechar{ℱ}{\ensuremath{\mathcal{F}}}
+\newunicodechar{⚠}{\ensuremath{\triangle}}
+\newunicodechar{️}{}
+\setCJKfamilyfont{zhsong}{FandolSong}[BoldFont=FandolSong-Bold]
+\setCJKfamilyfont{zhhei}{FandolHei-Regular}
+\setCJKfamilyfont{zhkai}{FandolKai-Regular}
+\setCJKfamilyfont{zhfs}{FandolFang-Regular}
+\setCJKmainfont{FandolSong}[BoldFont=FandolSong-Bold, ItalicFont=FandolKai]
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\titleformat{\section}{\songti\bfseries\fontsize{24}{29}\selectfont}{}{0pt}{\needspace{7\baselineskip}}
+\titleformat{\subsection}{\songti\bfseries\fontsize{22}{26}\selectfont}{}{0pt}{\needspace{7\baselineskip}}
+\titleformat{\subsubsection}{\songti\bfseries\fontsize{15}{18}\selectfont}{}{0pt}{\needspace{7\baselineskip}}
+\titleformat{\paragraph}{\songti\bfseries\fontsize{12}{15}\selectfont}{}{0pt}{\needspace{4\baselineskip}}
+\titlespacing*{\section}{0pt}{4pt}{12pt}
+\titlespacing*{\subsection}{0pt}{18pt}{12pt}
+\titlespacing*{\subsubsection}{0pt}{14pt}{8pt}
+\titlespacing*{\paragraph}{0pt}{10pt}{5pt}
+\linespread{1.30}
+\setlength{\parindent}{21pt}
+\setlength{\parskip}{0pt plus 1pt}
+\setlength{\emergencystretch}{6em}
+\setlength{\abovedisplayskip}{6pt plus 2pt minus 2pt}
+\setlength{\belowdisplayskip}{6pt plus 2pt minus 2pt}
+\setlength{\abovedisplayshortskip}{3pt}
+\setlength{\belowdisplayshortskip}{3pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\heiti\normalsize\leftmark}
+\fancyhead[R]{\normalsize\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\contentsname}{\centering\songti\bfseries\fontsize{22}{26}\selectfont 目录}
+\usepackage{enumitem}
+\setlist{itemsep=1pt,parsep=0pt,topsep=3pt,partopsep=0pt,leftmargin=2.2em}
+\usepackage{needspace}
+\usepackage{float}
+\floatplacement{figure}{H}
+\setlength{\textfloatsep}{8pt plus 2pt minus 2pt}
+\setlength{\intextsep}{8pt plus 2pt minus 2pt}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+% fallback for those not using the hyperref driver hyperxmp:
+\makeatletter
+\@ifundefined{xmpquote}{\newcommand{\xmpquote}[1]{#1}}{}
+\makeatother
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\section{高三数学 · 函数与导数 ·
+题目与解答}\thispagestyle{plain}\label{ux9ad8ux4e09ux6570ux5b66-ux51fdux6570ux4e0eux5bfcux6570-ux9898ux76eeux4e0eux89e3ux7b54}
+
+\subsection{第 1 题}\markboth{第 1 题}{}\label{ux7b2c-1-ux9898}
+
+已知函数 \(f(x)=e^{x}-ax-1\)。
+
+（1）当 \(a=1\) 时，求 \(f(x)\) 的单调区间；
+
+（2）若 \(f(x)\ge 0\) 对任意 \(x\in\mathbb{R}\) 恒成立，求实数 \(a\)
+的取值范围。
+
+\textbf{解：}
+
+（1）当 \(a=1\) 时，\(f(x)=e^{x}-x-1\)，定义域为 \(\mathbb{R}\)。
+
+求导得 \(f'(x)=e^{x}-1\)。
+
+令 \(f'(x)=0\)，得 \(x=0\)。
+
+当 \(x<0\) 时 \(f'(x)<0\)，\(f(x)\) 单调递减；当 \(x>0\) 时
+\(f'(x)>0\)，\(f(x)\) 单调递增。
+
+所以 \(f(x)\) 的单调递减区间为 \((-\infty,\,0)\)，单调递增区间为
+\((0,\,+\infty)\)。
+
+（2）要使 \(f(x)\ge 0\) 恒成立，即 \(e^{x}-ax-1\ge 0\)。
+
+当 \(x=0\) 时，左边 \(=0\)，不等式成立。
+
+当 \(x>0\) 时，\(a\le\dfrac{e^{x}-1}{x}\) 恒成立。
+
+设 \(g(x)=\dfrac{e^{x}-1}{x}\)，则
+\(g'(x)=\dfrac{xe^{x}-e^{x}+1}{x^{2}}\)。
+
+设 \(h(x)=xe^{x}-e^{x}+1\)，则 \(h'(x)=xe^{x}>0\)，所以 \(h(x)\) 在
+\((0,\,+\infty)\) 上单调递增，\(h(x)>h(0)=0\)。
+
+故 \(g'(x)>0\)，\(g(x)\) 在 \((0,\,+\infty)\) 上单调递增。
+
+由洛必达法则 \(\lim\limits_{x\to 0^{+}}g(x)=1\)，所以 \(a\le 1\)。
+
+综上，\(a\) 的取值范围是 \((-\infty,\,1]\)。
+
+\textbf{答案：}（1）递减区间 \((-\infty,0)\)，递增区间
+\((0,+\infty)\)；（2）\(a\le 1\)。
+
+\subsection{第 2 题}\markboth{第 2 题}{}\label{ux7b2c-2-ux9898}
+
+已知等差数列 \(\{a_n\}\) 的前 \(n\) 项和为 \(S_n\)，若
+\(a_1=2\)，\(a_4=11\)。
+
+（1）求数列 \(\{a_n\}\) 的通项公式；
+
+（2）求 \(S_6\) 的值。
+
+\textbf{解：}
+
+（1）设公差为 \(d\)，则 \(a_4=a_1+3d=2+3d=11\)，解得 \(d=3\)。
+
+所以 \(a_n=a_1+(n-1)d=2+3(n-1)=3n-1\)。
+
+（2）由（1）知 \(a_6=3\times 6-1=17\)。
+
+所以 \(S_6=\dfrac{6(a_1+a_6)}{2}=\dfrac{6(2+17)}{2}=57\)。
+
+\textbf{答案：}（1）\(a_n=3n-1\)；（2）\(S_6=57\)。
+
+\end{document}

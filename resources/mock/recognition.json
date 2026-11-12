@@ -1,0 +1,37 @@
+{
+  "questions": [
+    {
+      "stem": "已知函数 $f(x)=x^{3}-3x+1$，则 $f(x)$ 在区间 $[-2,\\,2]$ 上的最大值为（　）",
+      "options": [
+        { "label": "A", "text": "$3$" },
+        { "label": "B", "text": "$1$" },
+        { "label": "C", "text": "$-1$" },
+        { "label": "D", "text": "$5$" }
+      ],
+      "answer": "",
+      "analysis": "",
+      "questionType": "choice",
+      "confidence": 0.93,
+      "warnings": []
+    },
+    {
+      "stem": "设等比数列 $\\{a_n\\}$ 的前 $n$ 项和为 $S_n$，若 $a_1=1$，$q=2$，则 $S_5=\\underline{\\qquad}$。",
+      "options": [],
+      "answer": "",
+      "analysis": "",
+      "questionType": "fill",
+      "confidence": 0.88,
+      "warnings": ["原图中该题下方有截断痕迹，请核对"]
+    },
+    {
+      "stem": "解不等式 $\\dfrac{x-1}{x+2}\\ge 0$，并写出解集。",
+      "options": [],
+      "answer": "",
+      "analysis": "",
+      "questionType": "solve",
+      "confidence": 0.9,
+      "warnings": []
+    }
+  ],
+  "warnings": ["这是 mock 夹具，用于无网络时走通 UI 全流程"]
+}

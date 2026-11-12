@@ -1,0 +1,456 @@
+/* 主窗口补充样式：顶栏、工具栏、知识点面板、计数行、卡片。共享样式在 shared/styles.css。 */
+
+/* ─────────────────────────── 顶栏与工具栏 ─────────────────────────── */
+.header-hint {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-3);
+}
+
+/* 1440 窗口下让工具栏保持单行：压缩间距与固定宽度 */
+.toolbar {
+  gap: 7px;
+  padding: 10px 14px;
+}
+
+.toolbar .btn {
+  padding: 0 11px;
+  flex: 0 0 auto;
+}
+
+.toolbar .search-box .input {
+  width: 176px;
+}
+
+.toolbar .toolbar-select {
+  width: auto;
+  min-width: 100px;
+  max-width: 168px;
+}
+
+/* 右侧按钮组：窄窗口换行时整组一起走，组内也允许再换行，绝不溢出被裁 */
+.toolbar-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+/* ─────────────────────────── 知识点筛选面板 ─────────────────────────── */
+.kp-wrap {
+  position: relative;
+  display: inline-flex;
+}
+
+.kp-trigger-active {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.kp-panel {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 30;
+  width: 268px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+}
+
+.kp-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-2);
+}
+
+.kp-options {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.kp-option {
+  padding: 5px 6px;
+  border-radius: var(--radius-sm);
+  font-size: 12.5px;
+}
+
+.kp-option:hover {
+  background: var(--surface-2);
+}
+
+.kp-empty {
+  padding: 10px 6px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--text-3);
+}
+
+.kp-panel-foot {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-top: 7px;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+}
+
+/* ─────────────────────────── 计数行 ─────────────────────────── */
+.list-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px;
+  font-size: 12px;
+  color: var(--text-3);
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.list-header .list-count {
+  font-weight: 600;
+  color: var(--text-2);
+}
+
+/* ─────────────────────────── 卡片补充 ─────────────────────────── */
+.skeleton-card {
+  min-height: 178px;
+  border-radius: var(--radius);
+}
+
+.card-overlay {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.card-flag {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--warn-soft);
+  border: 1px solid #f0d9ae;
+  color: var(--warn);
+}
+
+.question-card .card-delete {
+  opacity: 0;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.94);
+  border-color: var(--border);
+  transition: opacity 0.12s, color 0.12s, border-color 0.12s;
+}
+
+.question-card:hover .card-delete,
+.question-card:focus-within .card-delete {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.question-card .card-delete:hover {
+  color: var(--danger);
+  border-color: var(--danger);
+}
+
+.card-scroll > .empty {
+  min-height: 58vh;
+}
+
+/* ─────────────────────────── 侧栏空状态 ─────────────────────────── */
+.doc-sidebar .empty {
+  padding: 28px 14px;
+}
+
+.doc-sidebar .empty-title {
+  font-size: 13px;
+}
+
+/* ─────────────────────────── 三栏骨架 ─────────────────────────── */
+/*
+ * 左列文件 268px ｜ 阅读器（比例宽度）｜ 分隔条 6px ｜ 题库自适应。
+ * --reader-ratio 由 App.tsx 写到 .app-body 上，取的是「左列与分隔条之外」的可用宽度占比。
+ */
+.app-body {
+  grid-template-columns:
+    minmax(0, var(--sidebar-width, 268px))
+    6px
+    minmax(0, calc((100% - var(--sidebar-width, 268px) - 12px) * var(--reader-ratio, 0.34)))
+    6px
+    minmax(0, 1fr);
+  min-width: 0;
+  min-height: 0;
+}
+
+/* 收起左列：只剩「阅读器 ｜ 分隔条 ｜ 题库」三列 */
+.app-body.sidebar-hidden {
+  grid-template-columns:
+    minmax(0, calc((100% - 6px) * var(--reader-ratio, 0.34)))
+    6px
+    minmax(0, 1fr);
+}
+
+/* 拖动中：整窗禁止选中，避免拖出蓝色选区 */
+.app-body.resizing {
+  user-select: none;
+}
+
+/*
+ * 拖动中关掉阅读器的指针响应。DOCX 是 iframe，指针进到 iframe 上方后
+ * 父文档收不到 pointermove，拖动会卡住；只在拖动期间关，平时不影响交互。
+ */
+.app-body.resizing .reader-pane {
+  pointer-events: none;
+}
+
+/* ─────────────────────────── 分隔条 ─────────────────────────── */
+.split-divider {
+  position: relative;
+  cursor: col-resize;
+  background: var(--border);
+  touch-action: none;
+  user-select: none;
+  transition: background 0.12s;
+}
+
+.split-divider:hover,
+.split-divider.active {
+  background: var(--accent);
+}
+
+.split-divider:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
+/* ─────────────────────────── 阅读器分栏 ─────────────────────────── */
+.reader-pane {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: #eceff3;
+}
+
+.reader-bar {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  padding: 2px 6px 2px 10px;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+}
+
+.reader-bar .btn-icon {
+  width: 26px;
+  height: 24px;
+  border-radius: var(--radius-sm);
+}
+
+.reader-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-2);
+}
+
+/* .viewer-shell 自带 height:100%，作为 flex 子项时改成撑满剩余高度 */
+.reader-viewer {
+  flex: 1 1 auto;
+  height: auto;
+  min-height: 0;
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* 窄条已经显示文件名，阅读器工具栏里那份可以省掉，给缩放与搜索腾地方 */
+.reader-viewer .viewer-title {
+  display: none;
+}
+
+.reader-viewer .viewer-toolbar {
+  flex: 0 0 auto;
+  padding: 6px 10px;
+}
+
+.reader-viewer .viewer-toolbar .search-box .input {
+  width: 128px;
+}
+
+.reader-empty {
+  padding: 24px 20px;
+}
+
+.reader-empty .empty-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+}
+
+.reader-empty .empty-title {
+  font-size: 13px;
+}
+
+/* 分栏变窄时卡片缩到容器宽度，不横向溢出；宽容器下仍是 330px 起的自适应列 */
+.app-body .card-grid {
+  grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+}
+
+/* ─────────────────────── 拖文件进窗口 ─────────────────────── */
+.drop-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 85;
+  display: grid;
+  place-items: center;
+  background: rgba(47, 91, 215, 0.06);
+  border: 2px dashed var(--accent);
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+.drop-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 22px 30px;
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-lg);
+  color: var(--accent);
+}
+
+.drop-title {
+  font-size: 15px;
+  font-weight: 650;
+  color: var(--text);
+}
+
+.drop-hint {
+  font-size: 12px;
+  color: var(--text-2);
+}
+
+/* ─────────────────────── 阅读器并排双栏 ─────────────────────── */
+.reader-area {
+  display: flex;
+  min-width: 0;
+  min-height: 0;
+  background: #eceff3;
+}
+
+.reader-area > .reader-pane {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 0;
+}
+
+.reader-area > .reader-pane + .reader-pane {
+  border-left: 1px solid var(--border);
+}
+
+/* 并排双栏：两栏比例由 --pane-ratio 控制，中间是能拖的分隔条 */
+.reader-area.split {
+  display: grid;
+  grid-template-columns:
+    minmax(0, calc((100% - 6px) * var(--pane-ratio, 0.5)))
+    6px
+    minmax(0, 1fr);
+}
+
+.reader-area.split > .reader-pane {
+  flex: initial;
+  border-left: none;
+}
+
+/* 焦点栏：新打开的文档落在这一边 */
+.reader-pane.focused .reader-bar {
+  box-shadow: inset 2px 0 0 var(--accent);
+}
+
+.reader-name-empty {
+  color: var(--text-3);
+}
+
+/* ─────────────────────── 主窗口里的题库视图 ─────────────────────── */
+.library-view {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+}
+
+.library-view .library-toolbar {
+  border-bottom: 1px solid var(--border);
+}
+
+.library-view .library-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px 16px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 0;
+}
+
+/* 顶部视图切换 */
+.view-tabs {
+  display: inline-flex;
+  gap: 2px;
+  padding: 2px;
+  border-radius: 8px;
+  background: var(--surface-3);
+}
+
+.view-tabs button {
+  border: none;
+  background: transparent;
+  color: var(--text-2);
+  font-size: 12.5px;
+  font-weight: 550;
+  padding: 5px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+}
+
+.view-tabs button:hover {
+  color: var(--text);
+}
+
+.view-tabs button.active {
+  background: var(--surface);
+  color: var(--accent);
+  box-shadow: var(--shadow-sm);
+}

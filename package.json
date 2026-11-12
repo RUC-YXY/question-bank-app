@@ -1,0 +1,39 @@
+{
+  "name": "tikuben",
+  "version": "0.1.0",
+  "private": true,
+  "description": "题库本：PDF/Word 阅读 + 快捷键截图 + 视觉识别 + 本地题库",
+  "main": "./out/main/index.js",
+  "author": "demo",
+  "scripts": {
+    "dev": "node scripts/launch.mjs dev",
+    "build": "node scripts/launch.mjs build",
+    "preview": "node scripts/launch.mjs preview",
+    "start": "electron-vite preview",
+    "dist": "node scripts/launch.mjs build && electron-builder --win nsis",
+    "typecheck": "tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.web.json"
+  },
+  "dependencies": {
+    "docx": "^9.15.3",
+    "docx-preview": "^0.4.1",
+    "fflate": "^0.8.3",
+    "katex": "^0.19.1",
+    "markdown-it": "^15.0.3",
+    "mathml2omml": "^0.5.0",
+    "pdfjs-dist": "^6.5.438"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^14.1.2",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@vitejs/plugin-react": "^5.1.1",
+    "electron": "^45.3.1",
+    "electron-builder": "^26.18.0",
+    "electron-vite": "^6.0.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.8"
+  }
+}

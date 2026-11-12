@@ -1,0 +1,187 @@
+/* 题库窗口：批量查看与导出 */
+.library-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--bg);
+}
+
+.library-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 52px;
+  padding: 0 16px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.library-count {
+  font-size: 12px;
+  color: var(--text-3);
+}
+
+.library-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 10px 16px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.library-selected {
+  font-size: 12px;
+  color: var(--text-2);
+  white-space: nowrap;
+}
+
+.library-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px 16px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 0;
+}
+
+.library-item {
+  display: flex;
+  gap: 10px;
+  padding: 12px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.library-item.selected {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-soft);
+}
+
+.library-check {
+  padding-top: 2px;
+  flex: 0 0 auto;
+}
+
+.library-check input {
+  width: 15px;
+  height: 15px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.library-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.library-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.library-index {
+  font-size: 12px;
+  color: var(--text-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.library-stem {
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.library-options {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-left: 4px;
+}
+
+.library-option {
+  font-size: 12.5px;
+  color: var(--text-2);
+}
+
+.library-answer {
+  font-size: 12.5px;
+  color: var(--ok);
+}
+
+/* 解析默认收起，点开才渲染，长解析不挤占列表 */
+.library-analysis-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+}
+
+.library-expand {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 7px 2px 5px;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--text-2);
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+}
+
+.library-expand:hover {
+  background: var(--surface-3);
+  color: var(--text);
+}
+
+.library-expand svg {
+  transition: transform 0.15s ease;
+}
+
+.library-expand.open svg {
+  transform: rotate(180deg);
+}
+
+.library-analysis {
+  align-self: stretch;
+  padding: 8px 12px;
+  border-left: 2px solid var(--accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  background: var(--surface-2);
+  font-size: 12.5px;
+  line-height: 1.75;
+  color: var(--text-2);
+}
+
+.library-analysis-label {
+  margin-bottom: 4px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-3);
+}
+
+.library-edit {
+  align-self: flex-start;
+  flex: 0 0 auto;
+}
+
+/* 工具栏里的下拉不要撑满整行 */
+.library-toolbar .select {
+  width: auto;
+  min-width: 130px;
+}
+
+.library-toolbar .search-box .input {
+  width: 260px;
+}

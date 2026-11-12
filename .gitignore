@@ -1,0 +1,22 @@
+node_modules/
+out/
+release/
+dist/
+*.tsbuildinfo
+*.log
+.DS_Store
+
+# 运行日志与导出测试产物
+build/run-*.txt
+build/export-test/
+
+# LaTeX 中间产物（sample 下编译生成）
+*.aux
+*.fls
+*.fdb_latexmk
+*.xdv
+*.synctex.gz
+
+# 本地环境
+.env
+.env.local
